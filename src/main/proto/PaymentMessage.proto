@@ -1,0 +1,10 @@
+syntax = "proto3";
+
+option java_package = "com.giftok.paymnet.message";
+
+message PaymentMessage {
+
+	string certeficateId = 1;
+	//can be a Null
+	string error_code = 2;
+}
