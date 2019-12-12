@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.net.InetSocketAddress;
 
-public class Library {
+public class Application {
 	public boolean someLibraryMethod() {
 		return true;
 	}

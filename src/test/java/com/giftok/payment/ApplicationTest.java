@@ -3,7 +3,7 @@
  */
 package com.giftok.payment;
 
-public class LibraryTest {
+public class ApplicationTest {
 	public void testSomeLibraryMethod() {
 	}
 }
