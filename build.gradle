@@ -23,7 +23,7 @@ targetCompatibility = 11
 
 jar {
     manifest {
-        attributes 'Main-Class': 'com.giftok.payment.Library'
+        attributes 'Main-Class': 'com.giftok.payment.Application'
     }
 }
 
