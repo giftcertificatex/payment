@@ -10,4 +10,8 @@ public class ChargeResponse {
 		return Optional.ofNullable(errorCode);
 	}
 
+	public void setErrorCode(String errorCode) {
+
+		this.errorCode = errorCode;
+	}
 }

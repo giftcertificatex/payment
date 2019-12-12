@@ -10,9 +10,9 @@ public class ChargeRequestTest {
 
 	@Test
 	public void shouldCreateChargeRequest() throws Exception {
-		var chargeRequest = new ChargeRequest("testToken", BigDecimal.valueOf(3.33d));
+		var chargeRequest = new ChargeRequest("testToken", 333);
 		assertEquals("testToken", chargeRequest.cardToken());
-		assertEquals(BigDecimal.valueOf(3.33d), chargeRequest.amount());
+		assertEquals(333, chargeRequest.amount());
 	}
 
 }

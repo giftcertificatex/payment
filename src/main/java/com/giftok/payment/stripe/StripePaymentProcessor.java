@@ -1,0 +1,51 @@
+package com.giftok.payment.stripe;
+
+import java.util.Currency;
+import java.util.HashMap;
+
+import com.giftok.payment.ChargeRequest;
+import com.giftok.payment.ChargeResponse;
+import com.giftok.payment.PaymentProcessor;
+import com.stripe.Stripe;
+import com.stripe.exception.StripeException;
+import com.stripe.model.Charge;
+
+public class StripePaymentProcessor implements PaymentProcessor {
+
+	static {
+		//test Api Key of Gift Ok
+		Stripe.apiKey = "pk_test_Dce4bWD5gJJCvu6YQ4kWJrle00AT4iKude";
+	}
+	
+	private String stripeDescription = "Gift Ok Payment";
+
+	private Currency euro = Currency.getInstance("EUR");
+
+	@Override
+	public ChargeResponse charge(ChargeRequest chargeRequest) {
+		return chargeToStripe(chargeRequest);
+	}
+
+	private ChargeResponse chargeToStripe(ChargeRequest chargeRequest) {
+
+		try {
+			Charge.create(chargeParams(chargeRequest));
+			return new ChargeResponse();
+		} catch (StripeException e) {
+			ChargeResponse response = new ChargeResponse();
+			response.setErrorCode(e.getMessage());
+			return response;
+		}
+	}
+
+	private HashMap<String, Object> chargeParams(ChargeRequest chargeRequest) {
+
+		HashMap<String, Object> chargeParams = new HashMap<>();
+		chargeParams.put("amount", chargeRequest.amount());
+		chargeParams.put("currency", euro.getSymbol());
+		chargeParams.put("description", stripeDescription);
+		chargeParams.put("source", chargeRequest.cardToken());
+
+		return chargeParams;
+	}
+}

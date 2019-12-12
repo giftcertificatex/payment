@@ -1,7 +1,5 @@
 package com.giftok.payment;
 
-import java.math.BigDecimal;
-
 /**
  * Represents Reqeust to the Payment Gateway
  * 
@@ -11,9 +9,10 @@ import java.math.BigDecimal;
 public class ChargeRequest {
 
 	private final String cardToken;
-	private final BigDecimal amount;
+	//amount is int because it in cents
+	private final int amount;
 
-	public ChargeRequest(String cardToken, BigDecimal amount) {
+	public ChargeRequest(String cardToken, int amount) {
 		this.cardToken = cardToken;
 		this.amount = amount;
 	}
@@ -22,7 +21,7 @@ public class ChargeRequest {
 		return this.cardToken;
 	}
 
-	public BigDecimal amount() {
+	public int amount() {
 		return this.amount;
 	}
 }
