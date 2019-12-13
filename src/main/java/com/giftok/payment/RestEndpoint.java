@@ -2,6 +2,9 @@ package com.giftok.payment;
 
 import static spark.Spark.post;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonParser;
+
 import spark.Route;
 import spark.Spark;
 
@@ -18,8 +21,16 @@ public class RestEndpoint {
 	 * Expects message from Google Pub/Sub
 	 */
 
+	private static Gson gson = new Gson();
+	
 	static Route postPaymentRoute = (req, res) -> {
-		System.out.println(req.body());
+		System.out.println(getMessageString(req.body()));
 		return "Ok";
 	};
+	
+	private static String getMessageString(String body) {
+		var jsonRoot = JsonParser.parseString(body);
+	    var messageStr = jsonRoot.getAsJsonObject().get("message").toString();
+	    return messageStr;
+	}
 }
