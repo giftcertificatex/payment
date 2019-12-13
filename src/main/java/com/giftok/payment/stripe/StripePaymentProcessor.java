@@ -14,7 +14,7 @@ public class StripePaymentProcessor implements PaymentProcessor {
 
 	static {
 		//test Api Key of Gift Ok
-		Stripe.apiKey = "pk_test_Dce4bWD5gJJCvu6YQ4kWJrle00AT4iKude";
+		Stripe.apiKey = "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj";
 	}
 	
 	private String stripeDescription = "Gift Ok Payment";
@@ -42,7 +42,7 @@ public class StripePaymentProcessor implements PaymentProcessor {
 
 		HashMap<String, Object> chargeParams = new HashMap<>();
 		chargeParams.put("amount", chargeRequest.amount());
-		chargeParams.put("currency", euro.getSymbol());
+		chargeParams.put("currency", euro.getCurrencyCode());
 		chargeParams.put("description", stripeDescription);
 		chargeParams.put("source", chargeRequest.cardToken());
 

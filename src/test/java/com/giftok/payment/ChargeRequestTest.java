@@ -2,8 +2,6 @@ package com.giftok.payment;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import java.math.BigDecimal;
-
 import org.junit.jupiter.api.Test;
 
 public class ChargeRequestTest {
