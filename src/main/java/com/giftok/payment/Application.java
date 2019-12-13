@@ -4,33 +4,10 @@
  */
 package com.giftok.payment;
 
-import com.sun.net.httpserver.HttpServer;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.net.InetSocketAddress;
 
 public class Application {
-	public boolean someLibraryMethod() {
-		return true;
+
+	public static void main(String[] args) {
+		RestEndpoint.startListen();
 	}
-
-	public static void main(String[] args) throws IOException {
-		// Create an instance of HttpServer bound to port defined by the
-		// PORT environment variable when present, otherwise on 8080.
-		var port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
-		var server = HttpServer.create(new InetSocketAddress(port), 0);
-
-		// Set root URI path.
-		server.createContext("/", (var t) -> {
-			byte[] response = "Hello World from Payment Service Java 11.".getBytes();
-			t.sendResponseHeaders(200, response.length);
-			try (OutputStream os = t.getResponseBody()) {
-				os.write(response);
-			}
-		});
-
-		// Start the server.
-		server.start();
-	}
-
 }
