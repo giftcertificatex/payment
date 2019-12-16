@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_package = "com.giftok.certificate";
+option java_outer_classname = "CertificateProto";
+
+message Certificate {
+    string id = 1;
+    int64 amount = 2;
+    User owner = 3;
+    Currency currency = 4;
+    string text = 5;
+    string cardHash = 6;
+
+    enum Currency {
+        EUR = 0;
+        USD = 1;
+        UAH = 2;
+    }
+
+    message User {
+        string email = 1;
+    }
+}
