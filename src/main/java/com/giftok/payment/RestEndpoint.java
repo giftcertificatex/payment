@@ -6,6 +6,7 @@ import java.util.function.Function;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonParser;
+import com.google.pubsub.v1.PubsubMessage;
 
 import spark.Route;
 import spark.Spark;
@@ -23,23 +24,18 @@ public class RestEndpoint {
 	 * Expects message from Google Pub/Sub
 	 */
 
-	private static Gson gson = new Gson();
+	static Function<String, String> getMessage = str -> getMessage(str);
 
-	static Function<String, String> getMessage = str -> {
-		return getMessage(str);
-	};
+	static Function<String, String> getData = str -> getData(str);
 
-	static Function<String, String> getData = str -> {
-		return getData(str);
-	};
+	static Function<String, PubsubMessage> toPubSubMessage = str -> toPubSubMessage(str);
 
 	static Route postPaymentRoute = (req, res) -> {
-		System.out.println(getMessage.andThen(getData).apply(req.body()));
+		var pubSubMessage = getMessage.andThen(toPubSubMessage).apply(req.body());
 		return "Ok";
 	};
 
 	private static String getData(String message) {
-
 		var jsonRoot = JsonParser.parseString(message);
 		var dataStr = jsonRoot.getAsJsonObject().get("data").toString();
 		return dataStr;
@@ -49,5 +45,11 @@ public class RestEndpoint {
 		var jsonRoot = JsonParser.parseString(body);
 		var messageStr = jsonRoot.getAsJsonObject().get("message").toString();
 		return messageStr;
+	}
+
+	private static PubsubMessage toPubSubMessage(String message) {
+		Gson gson = new Gson();
+		PubsubMessage pubSubMessage = gson.fromJson(message, PubsubMessage.class);
+		return pubSubMessage;
 	}
 }
