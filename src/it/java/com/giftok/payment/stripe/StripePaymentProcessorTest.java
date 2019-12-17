@@ -4,7 +4,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
-import com.giftok.payment.ChargeRequest;
+import com.giftok.payment.charge.ChargeRequest;
+import com.giftok.payment.charge.stripe.StripePaymentProcessor;
 
 /**
  * See https://stripe.com/docs/testing for tokens and scenarios

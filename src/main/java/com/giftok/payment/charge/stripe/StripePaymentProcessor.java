@@ -1,11 +1,11 @@
-package com.giftok.payment.stripe;
+package com.giftok.payment.charge.stripe;
 
 import java.util.Currency;
 import java.util.HashMap;
 
-import com.giftok.payment.ChargeRequest;
-import com.giftok.payment.ChargeResponse;
-import com.giftok.payment.PaymentProcessor;
+import com.giftok.payment.charge.ChargeRequest;
+import com.giftok.payment.charge.ChargeResponse;
+import com.giftok.payment.charge.PaymentProcessor;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;

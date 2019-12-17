@@ -1,4 +1,4 @@
-package com.giftok.payment;
+package com.giftok.payment.charge;
 
 import java.util.Optional;
 
