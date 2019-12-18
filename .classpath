@@ -34,6 +34,16 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-logging/1.99.0/6bfd900997ca27d9cca13dcb8ba031a408109df8/google-cloud-logging-1.99.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-logging/1.99.0/cd1dbb5447bc6c22619bdc7b1ffd84ba4b11d634/google-cloud-logging-1.99.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-grpc/1.91.3/491cc645085ad9ebf10b5e34ad19680a8c19088a/google-cloud-core-grpc-1.91.3-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-grpc/1.91.3/74711c94356587fd2fc8ead1272cffab25257aba/google-cloud-core-grpc-1.91.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/1.50.1/853110609969a8f5480656405931d2567e8b630/gax-grpc-1.50.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/1.50.1/7dddb125e1f9eb79e8e42a9eb06d30d1f93feec4/gax-grpc-1.50.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -59,7 +69,17 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core/1.91.3/309e47b77e1ea75390fb157a9cdffd76120db2b7/google-cloud-core-1.91.3-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core/1.91.3/66b11b43a9e039226d0554bd0ba442ba72c54a03/google-cloud-core-1.91.3.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-iam-v1/0.13.0/f8e570b163223aeea8902368d55e611323e62884/proto-google-iam-v1-0.13.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-iam-v1/0.13.0/ed3d62b64aa23a3decf324c8988eb4aae9f36e94/proto-google-iam-v1-0.13.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-logging-v2/0.82.0/e997b2434936718bb5a7712e643eb11757d881f3/proto-google-cloud-logging-v2-0.82.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-logging-v2/0.82.0/ceea8062b9caf876bc2e77c1374c3b5d6f2f292/proto-google-cloud-logging-v2-0.82.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
