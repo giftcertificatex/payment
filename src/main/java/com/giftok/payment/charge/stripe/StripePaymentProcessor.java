@@ -33,7 +33,7 @@ public class StripePaymentProcessor implements PaymentProcessor {
 			return new ChargeResponse();
 		} catch (StripeException e) {
 			ChargeResponse response = new ChargeResponse();
-			response.setErrorCode(e.getMessage());
+			response.setError(e.getMessage());
 			return response;
 		}
 	}

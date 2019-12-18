@@ -22,7 +22,7 @@ public class StripePaymentProcessorTest {
 		var chargeRequest = new ChargeRequest("tok_fr", 100);
 		var stripePaymentProcessor = new StripePaymentProcessor();
 		var chargeResponse = stripePaymentProcessor.charge(chargeRequest);
-		var result = chargeResponse.errorCode().orElseGet(() -> "success");
+		var result = chargeResponse.error().orElseGet(() -> "success");
 		assertEquals("success", result);
 	}
 
@@ -32,7 +32,7 @@ public class StripePaymentProcessorTest {
 		var chargeRequest = new ChargeRequest("invalid_token", 100);
 		var stripePaymentProcessor = new StripePaymentProcessor();
 		var chargeResponse = stripePaymentProcessor.charge(chargeRequest);
-		var result = chargeResponse.errorCode().orElseGet(() -> "success");
+		var result = chargeResponse.error().orElseGet(() -> "success");
 		assertTrue(result.indexOf("No such token") != -1);
 	}
 }

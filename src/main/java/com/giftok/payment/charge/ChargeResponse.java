@@ -4,14 +4,13 @@ import java.util.Optional;
 
 public class ChargeResponse {
 
-	private String errorCode;
+	private String error;
 
-	public Optional<String> errorCode() {
-		return Optional.ofNullable(errorCode);
+	public Optional<String> error() {
+		return Optional.ofNullable(error);
 	}
 
-	public void setErrorCode(String errorCode) {
-
-		this.errorCode = errorCode;
+	public void setError(String error) {
+		this.error = error;
 	}
 }
