@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Optional;
 import java.util.function.Function;
 
+import com.giftok.payment.LogUtility;
 import com.giftok.payment.charge.ChargeResponse;
 import com.giftok.paymnet.message.PaymentMessageOuterClass.PaymentMessage;
 import com.giftok.paymnet.message.PaymentMessageOuterClass.PaymentMessage.Builder;
@@ -39,8 +40,7 @@ public class CertificatePaidProducerImpl implements CertificatePaidProducer {
 			publisher.shutdown();
 			return Optional.of(messageID);
 		} catch (IOException | InterruptedException | ExecutionException e) {
-			// TODO Auto-generated catch block
-			System.out.println("Eroro");
+			LogUtility.error(e.getMessage());
 			return Optional.empty();
 		}
 	};

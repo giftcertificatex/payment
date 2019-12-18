@@ -4,6 +4,7 @@ import java.util.Optional;
 import java.util.function.Function;
 
 import com.giftok.certeficate.message.CertificateMessageOuterClass.CertificateMessage;
+import com.giftok.payment.LogUtility;
 import com.giftok.payment.charge.ChargeRequest;
 import com.giftok.payment.charge.ChargeResponse;
 import com.giftok.payment.charge.PaymentProcessor;
@@ -46,8 +47,7 @@ class CertificateCreatedConsumerImpl implements CerftificateCreatedConsumer {
 		try {
 			return Optional.of(CertificateMessage.parseFrom(pubSubMessage.getData()));
 		} catch (InvalidProtocolBufferException e) {
-			// Log Error
-			System.out.println(e.getMessage());
+			LogUtility.error(e.getMessage());
 			return Optional.empty();
 		}
 	}
