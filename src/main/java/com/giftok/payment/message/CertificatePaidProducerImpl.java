@@ -27,8 +27,12 @@ public class CertificatePaidProducerImpl implements CertificatePaidProducer {
 	@Override
 	public void publish(String certificateId, ChargeResponse chargeResponse) {
 
-		createPaymnetMessage(certificateId).andThen(toByteString.andThen(toPubsubMessage).andThen(publish))
+		Optional<String> result = createPaymnetMessage(certificateId).andThen(toByteString.andThen(toPubsubMessage).andThen(publish))
 				.apply(chargeResponse);
+		
+		if (result.isEmpty()) {
+			LogUtility.error("Can't publish paid result for certificateId: "+certificateId);
+		}
 	}
 
 	// TODO maybe make a published field reference

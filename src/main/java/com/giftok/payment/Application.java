@@ -8,6 +8,6 @@ package com.giftok.payment;
 public class Application {
 
 	public static void main(String[] args) {
-		RestEndpoint.startListen();
+		RestEndpoint.startListening();
 	}
 }

@@ -19,7 +19,7 @@ import spark.Spark;
 
 public class RestEndpoint {
 
-	public static void startListen() {
+	public static void startListening() {
 		Spark.port(8080);
 		int cores = Runtime.getRuntime().availableProcessors();
 		Spark.threadPool(cores * 2, cores, 5 * 1000);
