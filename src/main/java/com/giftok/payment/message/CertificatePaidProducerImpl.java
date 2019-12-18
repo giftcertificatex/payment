@@ -6,8 +6,8 @@ import java.util.function.Function;
 
 import com.giftok.payment.LogUtility;
 import com.giftok.payment.charge.ChargeResponse;
-import com.giftok.paymnet.message.PaymentMessageOuterClass.PaymentMessage;
-import com.giftok.paymnet.message.PaymentMessageOuterClass.PaymentMessage.Builder;
+import com.giftok.payment.message.PaymentMessageOuterClass.PaymentMessage;
+import com.giftok.payment.message.PaymentMessageOuterClass.PaymentMessage.Builder;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;

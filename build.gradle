@@ -6,6 +6,7 @@ buildscript {
     dependencies {
         classpath 'com.google.cloud.tools:appengine-gradle-plugin:2.+'
 	classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.10'
+	classpath 'com.github.jengelman.gradle.plugins:shadow:5.1.0'
     }
 }
 
@@ -16,6 +17,7 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: "com.google.cloud.tools.appengine"
 apply plugin: 'com.google.protobuf'
+apply plugin: 'com.github.johnrengelman.shadow'
 
 sourceCompatibility = 11
 targetCompatibility = 11
@@ -25,6 +27,8 @@ jar {
     manifest {
         attributes 'Main-Class': 'com.giftok.payment.Application'
     }
+	
+       	
 }
 
 repositories {
@@ -51,7 +55,7 @@ dependencies {
 appengine {
 
 	stage.artifact = 
-            "${buildDir}/libs/${project.name}-${project.version}.jar"
+            "${buildDir}/libs/${project.name}-${project.version}-all.jar"
 
 	stage.appEngineDirectory="."
     
@@ -60,4 +64,8 @@ appengine {
 		version="1"
     	}
     
+}
+
+shadowJar {
+    mergeServiceFiles()
 }

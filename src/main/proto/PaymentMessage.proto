@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.giftok.paymnet.message";
+option java_package = "com.giftok.payment.message";
 
 message PaymentMessage {
 

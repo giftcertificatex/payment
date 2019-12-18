@@ -1,6 +1,7 @@
 package com.giftok.payment;
 
 import static spark.Spark.post;
+import static spark.Spark.get;
 
 import java.util.Optional;
 import java.util.function.Function;
@@ -20,12 +21,19 @@ import spark.Spark;
 public class RestEndpoint {
 
 	public static void startListening() {
-		Spark.port(8080);
-		int cores = Runtime.getRuntime().availableProcessors();
-		Spark.threadPool(cores * 2, cores, 5 * 1000);
+		LogUtility.debug("Starting Application");
+		int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "8080"));
+	    Spark.port(port);
+	//	int cores = Runtime.getRuntime().availableProcessors();
+//		Spark.threadPool(cores * 2, cores, 5 * 1000);
+		get("/", healthStatus);
 		post("/submitPayment", postPaymentRoute);
+		LogUtility.debug("Ready to process Requests");
+		
 	}
 
+	
+	
 	/**
 	 * Expects message from Google Pub/Sub
 	 */
@@ -36,6 +44,11 @@ public class RestEndpoint {
 
 	static Function<String, PubsubMessage> toPubSubMessage = str -> toPubSubMessage(str);
 
+	static Route healthStatus = (req,res) -> {
+		LogUtility.debug("Got Health Request");
+		return "Ok";
+	};
+	
 	static Route postPaymentRoute = (req, res) -> {
 		var pubSubMessage = getMessage.andThen(toPubSubMessage).apply(req.body());
 
