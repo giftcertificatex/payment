@@ -11,7 +11,7 @@ import com.giftok.payment.charge.PaymentProcessor;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.pubsub.v1.PubsubMessage;
 
-class CertificateCreatedConsumerImpl implements CerftificateCreatedConsumer {
+public class CertificateCreatedConsumerImpl implements CerftificateCreatedConsumer {
 
 	private final PaymentProcessor paymentProcessor;
 
@@ -21,13 +21,8 @@ class CertificateCreatedConsumerImpl implements CerftificateCreatedConsumer {
 	}
 
 	@Override
-	public ChargeResponse processMessage(PubsubMessage message) {
-		var result = createCertificateMessage(message).map(createChargeRequest).map(charge(paymentProcessor))
-				.orElseGet(() -> {
-					var errorResult = new ChargeResponse();
-					errorResult.setError("Internal Error");
-					return errorResult;
-				});
+	public ChargeResponse processMessage(CertificateMessage message) {
+		var result = createChargeRequest.andThen(charge(paymentProcessor)).apply(message);
 		return result;
 	}
 
@@ -41,15 +36,6 @@ class CertificateCreatedConsumerImpl implements CerftificateCreatedConsumer {
 
 		var result = new ChargeRequest(certificateMessage.getCardHash(), certificateMessage.getAmount());
 		return result;
-	}
-
-	private Optional<CertificateMessage> createCertificateMessage(PubsubMessage pubSubMessage) {
-		try {
-			return Optional.of(CertificateMessage.parseFrom(pubSubMessage.getData()));
-		} catch (InvalidProtocolBufferException e) {
-			LogUtility.error(e.getMessage());
-			return Optional.empty();
-		}
 	}
 
 }
