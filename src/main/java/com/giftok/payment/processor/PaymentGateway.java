@@ -1,6 +1,6 @@
 package com.giftok.payment.processor;
 
-import com.giftok.payment.charge.stripe.StripePaymentGateway;
+import com.giftok.payment.processor.stripe.StripePaymentGateway;
 
 public interface PaymentGateway {
 

@@ -1,4 +1,4 @@
-package com.giftok.payment.charge.stripe;
+package com.giftok.payment.processor.stripe;
 
 import java.util.Currency;
 import java.util.HashMap;
