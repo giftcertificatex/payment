@@ -22,7 +22,7 @@ public class CertificateCreatedMessageRecieverWorker implements Runnable {
 	public void run() {
 		var subscriptionName = ProjectSubscriptionName.of(projectId, subscriptionId);
 
-		var messageReciever = new CertificateCreatedMessageReceiverImpl(this.queue);
+		var messageReciever = new CertificateCreatedMessageReceiver(this.queue);
 
 		var subscriber = Subscriber.newBuilder(subscriptionName, messageReciever).build();
 		LogUtility.info("Starting listening Certificate Created Message from Pub/Sub...");

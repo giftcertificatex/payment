@@ -9,11 +9,11 @@ import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.pubsub.v1.PubsubMessage;
 
-public class CertificateCreatedMessageReceiverImpl implements MessageReceiver {
+public class CertificateCreatedMessageReceiver implements MessageReceiver {
 
 	private final BlockingQueue<CertificateMessage> queue;
 
-	public CertificateCreatedMessageReceiverImpl(BlockingQueue<CertificateMessage> queue) {
+	public CertificateCreatedMessageReceiver(BlockingQueue<CertificateMessage> queue) {
 		this.queue = queue;
 	}
 
