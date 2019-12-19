@@ -24,7 +24,7 @@ public class HealthEndpoint {
 	}
 
 	static Route healthStatus = (req, res) -> {
-		LogUtility.info("Got Health Request");
+		LogUtility.info("Got Health Request", HealthEndpoint.class);
 		return "Ok";
 	};
 }

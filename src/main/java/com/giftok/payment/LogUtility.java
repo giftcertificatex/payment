@@ -11,13 +11,13 @@ import java.util.logging.Logger;
 
 public class LogUtility {
 
-	private static final Logger logger = Logger.getLogger("Payment Service");
-
-	public static void error(String message) {
+	public static void error(String message, Class<?> clazz) {
+		var logger =  Logger.getLogger(clazz.getName());
 		logger.severe(message);
 	}
 
-	public static void info(String message) {
+	public static void info(String message, Class<?> clazz) {
+		var logger =  Logger.getLogger(clazz.getName());
 		logger.info(message);
 	}
 }

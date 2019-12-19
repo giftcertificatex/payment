@@ -27,7 +27,7 @@ public class CertificatePaidPublisher {
 		var result = toByteString.andThen(toPubsubMessage).andThen(publish).apply(message);
 
 		if (result.isEmpty()) {
-			LogUtility.error("Can't publish paid result for certificateId: " + message.getCerteficateId());
+			LogUtility.error("Can't publish paid result for certificateId: " + message.getCerteficateId(), this.getClass());
 		}
 	}
 
@@ -40,7 +40,7 @@ public class CertificatePaidPublisher {
 			publisher.shutdown();
 			return Optional.of(messageID);
 		} catch (IOException | InterruptedException | ExecutionException e) {
-			LogUtility.error(e.getMessage());
+			LogUtility.error(e.getMessage(), this.getClass());
 			return Optional.empty();
 		}
 	};

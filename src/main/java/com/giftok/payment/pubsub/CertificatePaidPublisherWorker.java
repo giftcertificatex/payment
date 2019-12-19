@@ -16,14 +16,14 @@ public class CertificatePaidPublisherWorker implements Runnable {
 
 	@Override
 	public void run() {
-		LogUtility.info("Paid Publisher Worker is listening for Payment Message");
+		LogUtility.info("Paid Publisher Worker is listening for Payment Message", this.getClass());
 		while (true) {
 			try {
 				var message = paymentMessageQueue.take();
 				var publisher = new CertificatePaidPublisher();
 				publisher.publish(message);
 			} catch (InterruptedException e) {
-				LogUtility.error("Can't take Payment Message");
+				LogUtility.error("Can't take Payment Message", this.getClass());
 			}
 		}
 	}

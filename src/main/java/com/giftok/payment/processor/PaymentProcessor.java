@@ -31,7 +31,7 @@ public class PaymentProcessor {
 		try {
 			paymentMessageQueue.put(message);
 		} catch (InterruptedException e) {
-			LogUtility.error("Can't put response to Queue for Certificate: " + message.getCerteficateId());
+			LogUtility.error("Can't put response to Queue for Certificate: " + message.getCerteficateId(), this.getClass());
 		}
 	}
 

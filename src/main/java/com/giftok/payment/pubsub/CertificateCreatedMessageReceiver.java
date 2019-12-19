@@ -24,7 +24,7 @@ public class CertificateCreatedMessageReceiver implements MessageReceiver {
 			this.queue.put(certeficateMessage);
 			consumer.ack();
 		} catch (Exception e) {
-			LogUtility.error(e.getMessage());
+			LogUtility.error(e.getMessage(), this.getClass());
 			consumer.nack();
 		}
 	}

@@ -20,13 +20,13 @@ public class PaymentWorker implements Runnable {
 
 	@Override
 	public void run() {
-		LogUtility.info("Payment Worker is listening for Certificate Message");
+		LogUtility.info("Payment Worker is listening for Certificate Message", this.getClass());
 		while (true) {
 			try {
 				var certificateMessage = certificateCreatedQueue.take();
 				paymentProcessor.process(certificateMessage);
 			} catch (InterruptedException e) {
-				LogUtility.error("Can't take Certificate Message from CertificateCreatedQueue ");
+				LogUtility.error("Can't take Certificate Message from CertificateCreatedQueue ", this.getClass());
 			}
 		}
 	}

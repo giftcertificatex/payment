@@ -25,7 +25,7 @@ public class CertificateCreatedMessageRecieverWorker implements Runnable {
 		var messageReciever = new CertificateCreatedMessageReceiver(this.queue);
 
 		var subscriber = Subscriber.newBuilder(subscriptionName, messageReciever).build();
-		LogUtility.info("Starting listening Certificate Created Message from Pub/Sub...");
+		LogUtility.info("Starting listening Certificate Created Message from Pub/Sub...", this.getClass());
 		subscriber.startAsync();
 
 		// Wait for termination
