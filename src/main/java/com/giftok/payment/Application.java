@@ -4,10 +4,19 @@
  */
 package com.giftok.payment;
 
+/**
+ * Main class of Payment Service. Starts Payment Orhestrator and HealthEnpoint
+ * @See PaymentOrhestrator for detailed description of Payment Process
+ * 
+ * @author dmytro.tyshchenko
+ *
+ */
 
 public class Application {
 
 	public static void main(String[] args) {
-		RestEndpoint.startListening();
+		HealthEndpoint.startListening();
+		var paymnetOrhestartor = new PaymentOrhestrator();
+		paymnetOrhestartor.start();
 	}
 }

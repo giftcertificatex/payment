@@ -1,7 +1,7 @@
-package com.giftok.payment.charge;
+package com.giftok.payment.processor;
 
 /**
- * Represents Reqeust to the Payment Gateway
+ * Represents Request to the Payment Gateway
  * 
  * @author dmytro.tyshchenko
  *
@@ -9,7 +9,7 @@ package com.giftok.payment.charge;
 public class ChargeRequest {
 
 	private final String cardToken;
-	//amount is int because it in cents
+	// amount is int because it in cents
 	private final int amount;
 
 	public ChargeRequest(String cardToken, int amount) {

@@ -1,15 +1,15 @@
-package com.giftok.payment.message;
+package com.giftok.payment.pubsub;
 
+import static com.giftok.payment.pubsub.CertificatePaidPublisher.Operations.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import static com.giftok.payment.message.CertificatePaidProducerImpl.Operations.*;
-
 import org.junit.jupiter.api.Test;
 
-import com.giftok.payment.charge.ChargeResponse;
+import com.giftok.payment.processor.ChargeResponse;
+import static com.giftok.payment.processor.PaymentProcessor.Operations.*;
 
-public class CertificatePaidProducerImplTest {
+public class CertificatePaidPublisherTest {
 
 	@Test
 	public void shouldCreatePaymentMessage() throws Exception {

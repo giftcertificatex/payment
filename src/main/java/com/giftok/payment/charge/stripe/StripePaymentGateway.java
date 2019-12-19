@@ -3,20 +3,20 @@ package com.giftok.payment.charge.stripe;
 import java.util.Currency;
 import java.util.HashMap;
 
-import com.giftok.payment.charge.ChargeRequest;
-import com.giftok.payment.charge.ChargeResponse;
-import com.giftok.payment.charge.PaymentProcessor;
+import com.giftok.payment.processor.ChargeRequest;
+import com.giftok.payment.processor.ChargeResponse;
+import com.giftok.payment.processor.PaymentGateway;
 import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
 
-public class StripePaymentProcessor implements PaymentProcessor {
+public class StripePaymentGateway implements PaymentGateway {
 
 	static {
-		//test Api Key of Gift Ok
+		// test Api Key of Gift Ok
 		Stripe.apiKey = "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj";
 	}
-	
+
 	private String stripeDescription = "Gift Ok Payment";
 
 	private Currency euro = Currency.getInstance("EUR");

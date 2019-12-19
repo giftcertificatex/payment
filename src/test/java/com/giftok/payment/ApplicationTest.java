@@ -3,7 +3,35 @@
  */
 package com.giftok.payment;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+
 public class ApplicationTest {
-	public void testSomeLibraryMethod() {
+	private int numberOfThreads = 5;
+	ExecutorService executor = Executors.newFixedThreadPool(numberOfThreads);
+	
+	public void start() {
+		for (int i=0;i<numberOfThreads;i++) {
+			executor.submit(new Worker());
+		}
+	}
+	
+	static class Worker implements Runnable {
+
+		@Override
+		public void run() {
+			while (true) {
+				
+			}
+			
+		}
+		
+	}
+	
+	public static void main(String...strings) {
+		var application = new ApplicationTest();
+		application.start();
+		System.out.println("Running...");
 	}
 }

@@ -4,7 +4,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Test;
 
-import com.giftok.payment.charge.ChargeRequest;
+import com.giftok.payment.processor.ChargeRequest;
 
 public class ChargeRequestTest {
 
