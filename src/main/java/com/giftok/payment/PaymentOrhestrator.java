@@ -34,11 +34,13 @@ import com.giftok.payment.pubsub.CertificatePaidPublisherWorker;
 
 public class PaymentOrhestrator {
 
-	private final int numberOfThreads = 2;
+	private final int numberOfCertCreatedThreads = 2;
+	private final int numberOfPaymentThreads = 2;
+	private final int numberOfPublishPaidThreads = 2;
 	
-	private final ExecutorService certCreatedExecutorService = Executors.newFixedThreadPool(numberOfThreads);
-	private final ExecutorService paymentProcessorExecutorService = Executors.newFixedThreadPool(numberOfThreads);
-	private final ExecutorService publishPaidExecutorService = Executors.newFixedThreadPool(numberOfThreads);
+	private final ExecutorService certCreatedExecutorService = Executors.newFixedThreadPool(numberOfCertCreatedThreads);
+	private final ExecutorService paymentProcessorExecutorService = Executors.newFixedThreadPool(numberOfPaymentThreads);
+	private final ExecutorService publishPaidExecutorService = Executors.newFixedThreadPool(numberOfPublishPaidThreads);
 
 	
 	private final PaymentGateway paymentGateway = PaymentGateway.getInstance();
@@ -52,16 +54,16 @@ public class PaymentOrhestrator {
 
 	public void start() {
 
-		repeate(numberOfThreads, () -> {
+		repeate(numberOfCertCreatedThreads, () -> {
 			certCreatedExecutorService.submit(new CertificateCreatedMessageRecieverWorker(certificateCreatedQueue));
 		});
 
-		repeate(numberOfThreads, () -> {
+		repeate(numberOfPaymentThreads, () -> {
 			paymentProcessorExecutorService
 					.submit(new PaymentWorker(paymentGateway, paymentMessageQueue, certificateCreatedQueue));
 		});
 
-		repeate(numberOfThreads, () -> {
+		repeate(numberOfPublishPaidThreads, () -> {
 			publishPaidExecutorService.submit(new CertificatePaidPublisherWorker(paymentMessageQueue));
 		});
 
