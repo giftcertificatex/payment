@@ -22,13 +22,18 @@ public class CertificatePaidPublisher {
 
 	ProjectTopicName topicName = ProjectTopicName.of(projectId, topicId);
 
-	public void publish(PaymentMessage message) {
+	/*
+	 * Published PaymentMessage
+	 * Returns Optional with Published Message ID
+	 */
+	public Optional<String> publish(PaymentMessage message) {
 
 		var result = toByteString.andThen(toPubsubMessage).andThen(publish).apply(message);
 
 		if (result.isEmpty()) {
 			LogUtility.error("Can't publish paid result for certificateId: " + message.getCerteficateId(), this.getClass());
 		}
+		return result;
 	}
 
 	// TODO maybe make a published field reference
