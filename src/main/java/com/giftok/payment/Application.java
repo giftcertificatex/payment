@@ -4,8 +4,13 @@
  */
 package com.giftok.payment;
 
+import com.giftok.payment.ioc.PaymentModule;
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
 /**
  * Main class of Payment Service. Starts Payment Orhestrator and HealthEnpoint
+ * Initializes IoC 
  * @See PaymentOrhestrator for detailed description of Payment Process
  * 
  * @author dmytro.tyshchenko
@@ -15,8 +20,11 @@ package com.giftok.payment;
 public class Application {
 
 	public static void main(String[] args) {
+		
+		Injector injector = Guice.createInjector(new PaymentModule());
+		
 		HealthEndpoint.startListening();
-		var paymnetOrhestartor = new PaymentOrhestrator();
+		var paymnetOrhestartor = new PaymentOrhestrator(injector);
 		paymnetOrhestartor.start();
 	}
 }

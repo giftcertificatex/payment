@@ -4,7 +4,6 @@ import java.util.concurrent.BlockingQueue;
 
 import com.giftok.certeficate.message.CertificateMessageOuterClass.CertificateMessage;
 import com.giftok.payment.LogUtility;
-import com.giftok.payment.message.PaymentMessageOuterClass.PaymentMessage;
 
 public class PaymentWorker implements Runnable {
 
@@ -12,9 +11,9 @@ public class PaymentWorker implements Runnable {
 
 	private final BlockingQueue<CertificateMessage> certificateCreatedQueue;
 
-	public PaymentWorker(PaymentGateway paymentGateway, BlockingQueue<PaymentMessage> paymentMessageQueue,
+	public PaymentWorker(PaymentProcessor paymentProcessor,
 			BlockingQueue<CertificateMessage> certificateCreatedQueue) {
-		this.paymentProcessor = new PaymentProcessor(paymentGateway, paymentMessageQueue);
+		this.paymentProcessor = paymentProcessor;
 		this.certificateCreatedQueue = certificateCreatedQueue;
 	}
 
@@ -30,5 +29,4 @@ public class PaymentWorker implements Runnable {
 			}
 		}
 	}
-
 }

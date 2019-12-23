@@ -124,6 +124,11 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.2.2/ffd85e2a6ab1f015b16fc766ced990fd260024a4/guice-4.2.2-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.inject/guice/4.2.2/6dacbe18e5eaa7f6c9c36db33b42e7985e94ce77/guice-4.2.2.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/962153db4a9ea71b79d047dfd1b2a0d80d8f4739/slf4j-api-1.7.25-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.slf4j/slf4j-api/1.7.25/da76ca59f6a57ee3102f8f9bd9cee742973efa8a/slf4j-api-1.7.25.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -245,6 +250,16 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.7/b0b58effde0c59de07e98f452744a91afab4e4a0/auto-value-annotations-1.7-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.auto.value/auto-value-annotations/1.7/5be124948ebdc7807df68207f35a0f23ce427f29/auto-value-annotations-1.7.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/a00123f261762a7c5e0ec916a2c7c8298d29c400/javax.inject-1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/4a4b6d692e17846a9f3da036438a7ac491d3c814/aopalliance-1.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/aopalliance/aopalliance/1.0/235ba8b489512805ac13a8f9ea77a1ca5ebe3e8/aopalliance-1.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>

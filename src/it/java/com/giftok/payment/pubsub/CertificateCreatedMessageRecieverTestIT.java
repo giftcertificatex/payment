@@ -4,10 +4,12 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.function.Supplier;
 
 import org.junit.jupiter.api.Test;
 
 import com.giftok.certeficate.message.CertificateMessageOuterClass.CertificateMessage;
+import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Publisher;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
@@ -39,7 +41,7 @@ public class CertificateCreatedMessageRecieverTestIT {
 		var queue = new LinkedBlockingDeque<CertificateMessage>();
 
 		//listening for Certificate Massage Queue
-		var receiver = new CertificateCreatedMessageRecieverWorker(queue);
+		var receiver = new CertificateCreatedMessageRecieverWorker(new MyMessageSupplier(queue));
 		
 		var executorService = Executors.newSingleThreadExecutor();
 		
@@ -49,5 +51,21 @@ public class CertificateCreatedMessageRecieverTestIT {
 		var messageFromPubSub = queue.take();
 		System.out.println(messageFromPubSub.toString());
 		assertEquals(messageFromPubSub.getId(), "testCert");
+	}
+	
+	public static class MyMessageSupplier implements Supplier<MessageReceiver> {
+
+		private LinkedBlockingDeque<CertificateMessage> queue;
+		
+		public MyMessageSupplier(LinkedBlockingDeque<CertificateMessage> queue) {
+			this.queue = queue;
+		}
+		
+		@Override
+		public MessageReceiver get() {
+			// TODO Auto-generated method stub
+			return new  CertificateCreatedMessageReceiver(this.queue);
+		}
+		
 	}
 }

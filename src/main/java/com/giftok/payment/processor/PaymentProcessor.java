@@ -15,7 +15,8 @@ public class PaymentProcessor {
 	private final PaymentGateway paymentGateway;
 	private final BlockingQueue<PaymentMessage> paymentMessageQueue;
 
-	public PaymentProcessor(PaymentGateway paymentGateway, BlockingQueue<PaymentMessage> paymentMessageQueue) {
+	public PaymentProcessor(PaymentGateway paymentGateway,
+			BlockingQueue<PaymentMessage> paymentMessageQueue) {
 		this.paymentGateway = paymentGateway;
 		this.paymentMessageQueue = paymentMessageQueue;
 	}
@@ -31,7 +32,8 @@ public class PaymentProcessor {
 		try {
 			paymentMessageQueue.put(message);
 		} catch (InterruptedException e) {
-			LogUtility.error("Can't put response to Queue for Certificate: " + message.getCerteficateId(), this.getClass());
+			LogUtility.error("Can't put response to Queue for Certificate: " + message.getCerteficateId(),
+					this.getClass());
 		}
 	}
 
