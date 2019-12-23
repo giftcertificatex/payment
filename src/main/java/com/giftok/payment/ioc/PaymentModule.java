@@ -68,14 +68,15 @@ public class PaymentModule extends AbstractModule {
 
 	@Provides
 	@Inject
-	CertificateCreatedMessageRecieverWorker certificateCreatedMessageRecieverWorker(CertificateCreatedMessageReceiver messageReceiver) {
+	CertificateCreatedMessageRecieverWorker certificateCreatedMessageRecieverWorker(
+			CertificateCreatedMessageReceiver messageReceiver) {
 		return new CertificateCreatedMessageRecieverWorker(new Supplier<MessageReceiver>() {
 
 			@Override
 			public MessageReceiver get() {
 				return messageReceiver;
 			}
-			
+
 		});
 	}
 

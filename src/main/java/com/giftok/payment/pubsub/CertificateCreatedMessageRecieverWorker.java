@@ -1,9 +1,7 @@
 package com.giftok.payment.pubsub;
 
-import java.util.concurrent.BlockingQueue;
 import java.util.function.Supplier;
 
-import com.giftok.certeficate.message.CertificateMessageOuterClass.CertificateMessage;
 import com.giftok.payment.LogUtility;
 import com.google.cloud.pubsub.v1.MessageReceiver;
 import com.google.cloud.pubsub.v1.Subscriber;
