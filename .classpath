@@ -39,12 +39,17 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-firestore/1.32.0/5d3bf472020fff2ea4b25f6553c6579f459078c2/google-cloud-firestore-1.32.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-firestore/1.32.0/7b0ad3d2ec2d46cb58f4f82859506b8dff79b7b8/google-cloud-firestore-1.32.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-grpc/1.91.3/491cc645085ad9ebf10b5e34ad19680a8c19088a/google-cloud-core-grpc-1.91.3-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-core-grpc/1.91.3/74711c94356587fd2fc8ead1272cffab25257aba/google-cloud-core-grpc-1.91.3.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/1.50.1/853110609969a8f5480656405931d2567e8b630/gax-grpc-1.50.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/1.50.1/7dddb125e1f9eb79e8e42a9eb06d30d1f93feec4/gax-grpc-1.50.1.jar">
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/1.51.0/90029bb5845876fac92c3229c356a15860b9ab77/gax-grpc-1.51.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax-grpc/1.51.0/ed1984faf904b03e7c446bbf7c7cc1dd2e95d2eb/gax-grpc-1.51.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -84,12 +89,37 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-firestore-admin-v1/1.32.0/ef46d042b02288f8872bde888e7f17525d488f74/proto-google-cloud-firestore-admin-v1-1.32.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-firestore-admin-v1/1.32.0/8562e07d60e2ed2d34c9a1eff387deabe2c6ef60/proto-google-cloud-firestore-admin-v1-1.32.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-conformance-tests/0.0.1/96353a4f15b9ea92547d1ef3dde258e9ceb11a20/google-cloud-conformance-tests-0.0.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.cloud/google-cloud-conformance-tests/0.0.1/9c8fa415b1758c2159fbc5b4f765d8d8d5888d0a/google-cloud-conformance-tests-0.0.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-firestore-v1/1.32.0/f47d67e96cfbf57aea9ee6ee326018600c4d45a6/proto-google-cloud-firestore-v1-1.32.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-firestore-v1/1.32.0/a42f602f28a46e0163a60576765247e3fb36c277/proto-google-cloud-firestore-v1-1.32.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-firestore-v1beta1/0.85.0/933d792cfae10d29b4aa3139f861af6721e6559a/proto-google-cloud-firestore-v1beta1-0.85.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-firestore-v1beta1/0.85.0/8b7ca7474cdb5122196e8e21c55acacb329047ea/proto-google-cloud-firestore-v1beta1-0.85.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-bigtable-v2/0.80.0/b593dcdcf34906431dfd4b73547b4aa3f6ace167/proto-google-cloud-bigtable-v2-0.80.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-cloud-bigtable-v2/0.80.0/eec0c7ebfd41f9fca295f5698609333e15012964/proto-google-cloud-bigtable-v2-0.80.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-common-protos/1.17.0/6412bec508c9e38064d5f47024e6ee4de8dc82b6/proto-google-common-protos-1.17.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api.grpc/proto-google-common-protos/1.17.0/40471bf2045151c17da555889b5550fcfd5224a8/proto-google-common-protos-1.17.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.10.0/41a9d1aff6f67dcc3c178505d21ed07d78ac9f1b/protobuf-java-util-3.10.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.10.0/a68c906db83e93babbb4024ce91e7441bb7598dd/protobuf-java-util-3.10.0.jar">
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.11.1/a59c7c3f51e620e8f199eb87fcc5ef8e74aa2193/protobuf-java-util-3.11.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.protobuf/protobuf-java-util/3.11.1/60044bdc3b6621a5fd39c4e393d0cc894c2dbf36/protobuf-java-util-3.11.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -105,6 +135,11 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-core/2.8.0/723e11d1caad947a94d5b1c6a297f8b1421bc557/spark-core-2.8.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.sparkjava/spark-core/2.8.0/784ff9ba2ff8b45ef44b4cbe7a8b3e34a839a69b/spark-core-2.8.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-grpc-util/0.24.0/5a7808f9d7e4fc5386f799c7f5c16744ab79aca1/opencensus-contrib-grpc-util-0.24.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/io.opencensus/opencensus-contrib-grpc-util/0.24.0/1ac2f0c1a02c7ec0cd244e59228f687a90dfddab/opencensus-contrib-grpc-util-0.24.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -184,7 +219,7 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax/1.50.1/d898c4c791f79f80483a55c0d7fadbd06f5a158d/gax-1.50.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax/1.50.1/45ce96e9c16e44f33a0e25901ac9a31071780104/gax-1.50.1.jar">
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax/1.51.0/15c2ce2636e3dea0d701fc0d893bb5a387d248ec/gax-1.51.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.api/gax/1.51.0/c3d532be8aba0b9dad16185e77cec76c31a8b9c3/gax-1.51.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
@@ -264,6 +299,21 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.25.0/b21abf7f772a9b99635b710a82826b8ac15bbb22/grpc-context-1.25.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.25.0/eebabd88cab3bb27ecd309eb244faa143385efc0/grpc-context-1.25.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/0.18.0/c3772a6b0077fd6d1dfbe041b3aa52fd134285ff/google-auth-library-credentials-0.18.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/0.18.0/72d198af6d5288dc09c4031fd7d7d65b07e36b16/google-auth-library-credentials-0.18.0.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.10.1/a12ab35dd79cd21276603c0f43695774c4bfb23c/jackson-core-2.10.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.10.1/2c8b5e26ba40e5f91eb37a24075a2028b402c5f9/jackson-core-2.10.1.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/ab3976d4574c48d22dc1abf6a9e8bd0fdf928223/javax.servlet-api-3.1.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/javax.servlet/javax.servlet-api/3.1.0/3cd63d075497751784b2fa84be59432f4905bf7c/javax.servlet-api-3.1.0.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -304,11 +354,6 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.25.0/b21abf7f772a9b99635b710a82826b8ac15bbb22/grpc-context-1.25.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/io.grpc/grpc-context/1.25.0/eebabd88cab3bb27ecd309eb244faa143385efc0/grpc-context-1.25.0.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.18/dff084acf1ff3ff9145b1708c566787d2c82dd0/animal-sniffer-annotations-1.18-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.codehaus.mojo/animal-sniffer-annotations/1.18/f7aa683ea79dc6681ee9fb95756c999acbb62f5d/animal-sniffer-annotations-1.18.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -339,11 +384,6 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/0.18.0/c3772a6b0077fd6d1dfbe041b3aa52fd134285ff/google-auth-library-credentials-0.18.0-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.auth/google-auth-library-credentials/0.18.0/72d198af6d5288dc09c4031fd7d7d65b07e36b16/google-auth-library-credentials-0.18.0.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/deb22daeb37bdcbc14230aeaeddce38320d6d0f9/annotations-4.1.1.4-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.google.android/annotations/4.1.1.4/a1678ba907bf92691d879fef34e1a187038f9259/annotations-4.1.1.4.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -364,16 +404,6 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/f7d878153e86a1cdddf6b37850e00a9f8bff726f/commons-lang3-3.5-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/6c6c702c89bfff3cd9e80b04d668c5e190d588c6/commons-lang3-3.5.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.conscrypt/conscrypt-openjdk-uber/2.2.1/d84ccc315e76df6954c8efda041b3a5d745f82e9/conscrypt-openjdk-uber-2.2.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.conscrypt/conscrypt-openjdk-uber/2.2.1/59a346d64c0ddca750c5c877e274d5e6278e53ce/conscrypt-openjdk-uber-2.2.1.jar">
-		<attributes>
-			<attribute name="gradle_used_by_scope" value="main,test"/>
-		</attributes>
-	</classpathentry>
 	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/ecf26c7507d67782a3bbd148d170b31dfad001aa/commons-logging-1.2-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/commons-logging/commons-logging/1.2/4bfc12adfe4842bf07b657f0369c4cb522955686/commons-logging-1.2.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
@@ -384,7 +414,12 @@
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.9/c8a91180aef81d62f44b27cef42bacb168871a4c/jackson-core-2.9.9-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/com.fasterxml.jackson.core/jackson-core/2.9.9/bfff5af9fb8347d26bbb7959cb9b4fe9a2b0ca5e/jackson-core-2.9.9.jar">
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/f7d878153e86a1cdddf6b37850e00a9f8bff726f/commons-lang3-3.5-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.apache.commons/commons-lang3/3.5/6c6c702c89bfff3cd9e80b04d668c5e190d588c6/commons-lang3-3.5.jar">
+		<attributes>
+			<attribute name="gradle_used_by_scope" value="main,test"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry sourcepath="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.conscrypt/conscrypt-openjdk-uber/2.2.1/d84ccc315e76df6954c8efda041b3a5d745f82e9/conscrypt-openjdk-uber-2.2.1-sources.jar" kind="lib" path="C:/Users/dmytro.tyshchenko/.gradle/caches/modules-2/files-2.1/org.conscrypt/conscrypt-openjdk-uber/2.2.1/59a346d64c0ddca750c5c877e274d5e6278e53ce/conscrypt-openjdk-uber-2.2.1.jar">
 		<attributes>
 			<attribute name="gradle_used_by_scope" value="main,test"/>
 		</attributes>
