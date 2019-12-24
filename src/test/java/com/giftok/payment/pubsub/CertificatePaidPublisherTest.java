@@ -13,21 +13,19 @@ public class CertificatePaidPublisherTest {
 
 	@Test
 	public void shouldCreatePaymentMessage() throws Exception {
-		var paymentMessage = createPaymnetMessage("certId").apply(new ChargeResponse());
+		var paymentMessage = createPaymnetMessage("certId").apply(ChargeResponse.success("id"));
 		assertEquals("certId", paymentMessage.getCerteficateId());
 	}
 
 	@Test
 	public void shouldCreateErrorPaymentMessage() throws Exception {
-		var response = new ChargeResponse();
-		response.setError("Error");
-		var paymentMessage = createPaymnetMessage("certId").apply(response);
+		var paymentMessage = createPaymnetMessage("certId").apply(ChargeResponse.failed("Error"));
 		assertEquals("Error", paymentMessage.getError());
 	}
 
 	@Test
 	public void shouldCreatePubsubMessage() throws Exception {
-		var paymentMessage = createPaymnetMessage("certId").apply(new ChargeResponse());
+		var paymentMessage = createPaymnetMessage("certId").apply(ChargeResponse.success("id"));
 		var result = toByteString.andThen(toPubsubMessage).apply(paymentMessage);
 		assertNotNull(result);
 	}

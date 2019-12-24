@@ -12,7 +12,7 @@ import com.stripe.net.RequestOptions;
 import static com.stripe.net.RequestOptions.*;
 
 public class StripePaymentGateway implements PaymentGateway {
-	
+
 	private String stripeDescription = "Gift Ok Payment";
 
 	private Currency euro = Currency.getInstance("EUR");
@@ -31,12 +31,10 @@ public class StripePaymentGateway implements PaymentGateway {
 	private ChargeResponse chargeToStripe(ChargeRequest chargeRequest) {
 
 		try {
-			Charge.create(chargeParams(chargeRequest), requestOptions);
-			return new ChargeResponse();
+			var charge = Charge.create(chargeParams(chargeRequest), requestOptions);
+			return ChargeResponse.success(charge.getId());
 		} catch (StripeException e) {
-			ChargeResponse response = new ChargeResponse();
-			response.setError(e.getMessage());
-			return response;
+			return ChargeResponse.failed(e.getMessage());
 		}
 	}
 
