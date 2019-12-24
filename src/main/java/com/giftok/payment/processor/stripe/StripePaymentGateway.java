@@ -6,20 +6,22 @@ import java.util.HashMap;
 import com.giftok.payment.processor.ChargeRequest;
 import com.giftok.payment.processor.ChargeResponse;
 import com.giftok.payment.processor.PaymentGateway;
-import com.stripe.Stripe;
 import com.stripe.exception.StripeException;
 import com.stripe.model.Charge;
+import com.stripe.net.RequestOptions;
+import static com.stripe.net.RequestOptions.*;
 
 public class StripePaymentGateway implements PaymentGateway {
-
-	static {
-		// test Api Key of Gift Ok
-		Stripe.apiKey = "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj";
-	}
-
+	
 	private String stripeDescription = "Gift Ok Payment";
 
 	private Currency euro = Currency.getInstance("EUR");
+
+	private final RequestOptions requestOptions;
+
+	public StripePaymentGateway(String apiKey) {
+		this.requestOptions = new RequestOptionsBuilder().setApiKey(apiKey).build();
+	}
 
 	@Override
 	public ChargeResponse charge(ChargeRequest chargeRequest) {
@@ -29,7 +31,7 @@ public class StripePaymentGateway implements PaymentGateway {
 	private ChargeResponse chargeToStripe(ChargeRequest chargeRequest) {
 
 		try {
-			Charge.create(chargeParams(chargeRequest));
+			Charge.create(chargeParams(chargeRequest), requestOptions);
 			return new ChargeResponse();
 		} catch (StripeException e) {
 			ChargeResponse response = new ChargeResponse();

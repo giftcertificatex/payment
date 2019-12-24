@@ -22,6 +22,8 @@ import com.giftok.payment.pubsub.CertificatePaidPublisherWorker;
 
 public class PaymentModule extends AbstractModule {
 
+	private final String stripeApiKey = "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj";
+
 	private final BlockingQueue<PaymentMessage> paymentMessageQueue = new LinkedBlockingDeque<>();
 	private final BlockingQueue<CertificateMessage> certificateCreatedQueue = new LinkedBlockingDeque<CertificateMessage>();
 
@@ -49,6 +51,11 @@ public class PaymentModule extends AbstractModule {
 		bind(Runnable.class).annotatedWith(Names.named("certificateCreatedMessageRecieverWorker"))
 				.to(CertificateCreatedMessageRecieverWorker.class);
 
+	}
+
+	@Provides
+	StripePaymentGateway stripePaymentGateway() {
+		return new StripePaymentGateway(stripeApiKey);
 	}
 
 	@Provides

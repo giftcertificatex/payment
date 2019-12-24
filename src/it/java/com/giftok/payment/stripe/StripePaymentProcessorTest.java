@@ -16,11 +16,13 @@ import com.giftok.payment.processor.stripe.StripePaymentGateway;
 
 public class StripePaymentProcessorTest {
 
+	private final String stripeApiKey = "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj";
+	
 	@Test
 	public void shouldCharge() throws Exception {
 
 		var chargeRequest = new ChargeRequest("tok_fr", 100);
-		var stripePaymentProcessor = new StripePaymentGateway();
+		var stripePaymentProcessor = new StripePaymentGateway(stripeApiKey);
 		var chargeResponse = stripePaymentProcessor.charge(chargeRequest);
 		var result = chargeResponse.error().orElseGet(() -> "success");
 		assertEquals("success", result);
@@ -30,7 +32,7 @@ public class StripePaymentProcessorTest {
 	public void shouldFailWithInvalidToken() throws Exception {
 
 		var chargeRequest = new ChargeRequest("invalid_token", 100);
-		var stripePaymentProcessor = new StripePaymentGateway();
+		var stripePaymentProcessor = new StripePaymentGateway(stripeApiKey);
 		var chargeResponse = stripePaymentProcessor.charge(chargeRequest);
 		var result = chargeResponse.error().orElseGet(() -> "success");
 		assertTrue(result.indexOf("No such token") != -1);
