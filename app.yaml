@@ -14,6 +14,9 @@
 
 # [START gae_java11_custom_entrypoint]
 runtime: java11
+env_variables:
+  STRIPE_API_KEY: "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj"
+
 service: payment
 entrypoint: java  -jar payment-1.0-SNAPSHOT-all.jar
 # [END gae_java11_custom_entrypoint]

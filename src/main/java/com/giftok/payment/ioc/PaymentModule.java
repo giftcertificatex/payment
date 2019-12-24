@@ -7,6 +7,7 @@ import java.util.function.Supplier;
 import javax.inject.Inject;
 
 import com.giftok.certeficate.message.CertificateMessageOuterClass.CertificateMessage;
+import com.giftok.payment.LogUtility;
 import com.giftok.payment.message.PaymentMessageOuterClass.PaymentMessage;
 import com.giftok.payment.processor.PaymentGateway;
 import com.giftok.payment.processor.PaymentProcessor;
@@ -22,10 +23,15 @@ import com.giftok.payment.pubsub.CertificatePaidPublisherWorker;
 
 public class PaymentModule extends AbstractModule {
 
-	private final String stripeApiKey = "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj";
+	private final String stripeApiKey;// = "sk_test_6kK5at10gSmpC7v9XJHhkxgB00r6oYzklj";
 
 	private final BlockingQueue<PaymentMessage> paymentMessageQueue = new LinkedBlockingDeque<>();
 	private final BlockingQueue<CertificateMessage> certificateCreatedQueue = new LinkedBlockingDeque<CertificateMessage>();
+
+	public PaymentModule() {
+		this.stripeApiKey = System.getenv().getOrDefault("STRIPE_API_KEY", "haha");
+		LogUtility.info("Read Stripe Api Key: " + this.stripeApiKey, PaymentModule.class);
+	}
 
 	@Override
 	protected void configure() {
