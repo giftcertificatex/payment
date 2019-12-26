@@ -1,19 +1,14 @@
 package com.giftok.payment.firestore;
 
 import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
 import java.util.function.Function;
 
 import com.giftok.payment.LogUtility;
 import com.giftok.payment.processor.ChargeResponse;
-import com.google.api.core.ApiFuture;
-import com.google.cloud.firestore.CollectionReference;
-import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreOptions;
-import com.google.cloud.firestore.WriteResult;
 
-public class FirestorePaymentRepository implements PaymentRespository {
+public class FirestorePaymentRepository implements PaymentRepository {
 
 	private final Firestore db;
 
@@ -28,16 +23,23 @@ public class FirestorePaymentRepository implements PaymentRespository {
 
 	}
 
+	@Override
 	public Function<ChargeResponse, Boolean> saveChargeResponse(String certificateId) {
 		return chargeResponse -> {
 			var map = Operations.createMap(chargeResponse);
 			var collectionRef = db.collection(collectionName);
 			var docRef = collectionRef.document(certificateId);
 			try {
-				docRef.create(map).get();
+				//TODO or create?
+				docRef.set(map).get();
 			} catch (Exception e) {
+				/**
+				 * We don't throw Exception here. 
+				 * If we have problem with saving Payment Results in DB we should not break process.
+				 * At this point Charge can be successfully completed so we can't raise Exception
+				 */
 				System.err.println(e.getMessage());
-				LogUtility.error(certificateId + " payment Info was not Saved in DB " + e.getMessage(),
+				LogUtility.error(certificateId + " payment Info was not Saved in DB " + e.getMessage()+chargeResponse.toString(),
 						FirestorePaymentRepository.class);
 			}
 			return true;

@@ -8,6 +8,8 @@ import javax.inject.Inject;
 
 import com.giftok.certeficate.message.CertificateMessageOuterClass.CertificateMessage;
 import com.giftok.payment.LogUtility;
+import com.giftok.payment.firestore.FirestorePaymentRepository;
+import com.giftok.payment.firestore.PaymentRepository;
 import com.giftok.payment.message.PaymentMessageOuterClass.PaymentMessage;
 import com.giftok.payment.processor.PaymentGateway;
 import com.giftok.payment.processor.PaymentProcessor;
@@ -45,6 +47,9 @@ public class PaymentModule extends AbstractModule {
 		// Payment Gateway
 		bind(PaymentGateway.class).to(StripePaymentGateway.class);
 
+		// Repository
+		bind(PaymentRepository.class).to(FirestorePaymentRepository.class);
+
 		// Workers
 		bind(Runnable.class).annotatedWith(Names.named("paymentWorker")).to(PaymentWorker.class);
 
@@ -65,8 +70,8 @@ public class PaymentModule extends AbstractModule {
 	}
 
 	@Provides
-	PaymentProcessor paymentProcessor(PaymentGateway paymentGateway) {
-		return new PaymentProcessor(paymentGateway, this.paymentMessageQueue);
+	PaymentProcessor paymentProcessor(PaymentGateway paymentGateway, PaymentRepository paymentRepository) {
+		return new PaymentProcessor(paymentGateway, this.paymentMessageQueue, paymentRepository);
 	}
 
 	@Provides
