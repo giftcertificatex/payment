@@ -24,17 +24,31 @@ public class FirestorePaymentRepository implements PaymentRespository {
 
 	public Function<ChargeResponse, Boolean> saveChargeResponse(String certificateId) {
 		return chargeResponse -> {
-			var map = createMap(chargeResponse);
+			var map = Operations.createMap(chargeResponse);
 			db.collection(collectionName).document(certificateId).create(map);
 			return true;
 		};
 	}
 
-	private HashMap<String, Object> createMap(ChargeResponse chargeResponse) {
-		var result = new HashMap<String, Object>();
-		chargeResponse.error().map(error -> result.put("error", error));
-		chargeResponse.paymentId().map(paymentId -> result.put("paymentId", paymentId));
-		return result;
+	public static class Operations {
+
+		private static Function<String, HashMap<String, Object>> successFunction = value -> {
+			var result = new HashMap<String, Object>();
+			result.put(Keys.paymentId.toString(), value);
+			return result;
+		};
+		private static Function<String, HashMap<String, Object>> errorFunction = value -> {
+			var result = new HashMap<String, Object>();
+			result.put(Keys.error.toString(), value);
+			return result;
+		};
+
+		static HashMap<String, Object> createMap(ChargeResponse chargeResponse) {
+			return chargeResponse.reduce(successFunction, errorFunction);
+		}
 	}
 
+	public static enum Keys {
+		paymentId, error;
+	}
 }

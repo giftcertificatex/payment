@@ -10,7 +10,7 @@ public abstract class ChargeResponse {
 	// represents payments in Payment Gateway
 	protected String paymentId;
 
-	public abstract <R> R apply(Function<String, R> function);
+	public abstract <R> R reduce(Function<String, R> successFunction, Function<String, R> errorFunction);
 
 	public Optional<String> error() {
 		return Optional.ofNullable(error);
@@ -35,9 +35,9 @@ public abstract class ChargeResponse {
 		}
 
 		@Override
-		public <R> R apply(Function<String, R> function) {
+		public <R> R reduce(Function<String, R> successFunction, Function<String, R> errorFunction) {
 			// TODO Auto-generated method stub
-			return function.apply(error);
+			return errorFunction.apply(error);
 		}
 	}
 
@@ -48,9 +48,9 @@ public abstract class ChargeResponse {
 		}
 
 		@Override
-		public <R> R apply(Function<String, R> function) {
+		public <R> R reduce(Function<String, R> successFunction, Function<String, R> errorFunction) {
 			// TODO Auto-generated method stub
-			return function.apply(paymentId);
+			return successFunction.apply(paymentId);
 		}
 	}
 }
